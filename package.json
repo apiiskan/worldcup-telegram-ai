@@ -1,0 +1,38 @@
+{
+  "name": "worldcup-telegram-ai",
+  "version": "5.0.0",
+  "description": "2026 World Cup Telegram auto match push & score prediction system",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "sync:fixtures": "tsx src/scripts/syncFixtures.ts",
+    "test:telegram": "tsx src/scripts/testTelegram.ts",
+    "test:predict": "tsx src/scripts/testPredict.ts",
+    "test:prematch": "tsx src/scripts/testPreMatch.ts"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.104.1",
+    "axios": "^1.7.9",
+    "better-sqlite3": "^11.7.0",
+    "dotenv": "^16.4.7",
+    "node-cron": "^3.0.3",
+    "pino": "^9.6.0",
+    "pino-pretty": "^13.0.0",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.12",
+    "@types/node": "^22.10.0",
+    "@types/node-cron": "^3.0.11",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "better-sqlite3",
+      "esbuild"
+    ]
+  }
+}
